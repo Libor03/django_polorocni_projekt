@@ -8,27 +8,14 @@ from django.contrib.auth.models import User #Blog author or commenter
 
 
 
-class BlogAuthor(models.Model):
-    """
-    Model representing a blogger.
-    """
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
-    bio = models.TextField(max_length=400, help_text="Enter your bio details here.")
-    
-    class Meta:
-        ordering = ["user","bio"]
+class Animal(models.Model):
+    name = models.CharField(max_length=50, unique=True, verbose_name="Type of animal", help_text='Enter a type of animal (e.g. Savec)')
 
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular blog-author instance.
-        """
-        return reverse('blogs-by-author', args=[str(self.id)])
+    class Meta:
+        ordering = ["name"]
 
     def __str__(self):
-        """
-        String for representing the Model object.
-        """
-        return self.user.username
+        return self.name
 
 
 class Blog(models.Model):
@@ -36,14 +23,14 @@ class Blog(models.Model):
     Model representing a blog post.
     """
     name = models.CharField(max_length=200)
-    author = models.ForeignKey(BlogAuthor, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(Animal, on_delete=models.SET_NULL, null=True)
       # Foreign Key used because Blog can only have one author/User, but bloggsers can have multiple blog posts.
     description = models.TextField(max_length=2000, help_text="Enter you blog text here.")
     post_date = models.DateField(default=date.today)
-    
+
     class Meta:
         ordering = ["-post_date"]
-    
+
     def get_absolute_url(self):
         """
         Returns the url to access a particular blog instance.

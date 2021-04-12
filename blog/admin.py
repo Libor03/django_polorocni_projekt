@@ -2,11 +2,11 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import BlogAuthor, Blog, BlogComment
+from .models import Animal, Blog, BlogComment
 
 
 # Minimal registration of Models.
-admin.site.register(BlogAuthor)
+admin.site.register(Animal)
 admin.site.register(BlogComment)
 
 
@@ -20,7 +20,7 @@ class BlogCommentsInline(admin.TabularInline):
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     """
-    Administration object for Blog models. 
+    Administration object for Blog models.
     Defines:
      - fields to be displayed in list view (list_display)
      - orders fields in detail view (fields), grouping the date fields horizontally

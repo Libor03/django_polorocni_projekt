@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 from django.views import generic
-from .models import Blog, BlogAuthor, BlogComment
+from .models import Blog, Animal, BlogComment
 from django.contrib.auth.models import User #Blog author or commenter
 
 
@@ -43,7 +43,7 @@ class BlogListbyAuthorView(generic.ListView):
         Return list of Blog objects created by BlogAuthor (author id specified in URL)
         """
         id = self.kwargs['pk']
-        target_author=get_object_or_404(BlogAuthor, pk = id)
+        target_author=get_object_or_404(Animal, pk = id)
         return Blog.objects.filter(author=target_author)
         
     def get_context_data(self, **kwargs):
@@ -53,7 +53,7 @@ class BlogListbyAuthorView(generic.ListView):
         # Call the base implementation first to get a context
         context = super(BlogListbyAuthorView, self).get_context_data(**kwargs)
         # Get the blogger object from the "pk" URL parameter and add it to the context
-        context['blogger'] = get_object_or_404(BlogAuthor, pk = self.kwargs['pk'])
+        context['blogger'] = get_object_or_404(Animal, pk = self.kwargs['pk'])
         return context
     
     
@@ -69,7 +69,7 @@ class BloggerListView(generic.ListView):
     """
     Generic class-based view for a list of bloggers.
     """
-    model = BlogAuthor
+    model = Animal
     paginate_by = 5
 
 
