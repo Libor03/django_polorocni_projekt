@@ -7,7 +7,6 @@ from .models import Animal, Type, Attachment
 
 # Minimal registration of Models.
 admin.site.register(Animal)
-admin.site.register(Attachment)
 admin.site.register(Type)
 
 class BlogCommentsInline(admin.TabularInline):

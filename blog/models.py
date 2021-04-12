@@ -33,13 +33,24 @@ class Type(models.Model):
 
 
 class Animal(models.Model):
-    name = models.CharField(max_length=50, unique=True, verbose_name="Type of animal", help_text='Enter a type of animal (e.g. Savec)')
-    type = models.TextField(max_length=1000, help_text="Enter comment about blog here.")
+    name = models.CharField(max_length=50, unique=True, verbose_name="Name of animal")
+
+
+    poster = models.ImageField(upload_to='media/animal/%Y/%m/%d/', blank=True, null=True, verbose_name="Poster")
+    type = models.ManyToManyField(Type, help_text='Select a type for this animal')
+
+    # Metadata
     class Meta:
         ordering = ["name"]
 
+    # Methods
     def __str__(self):
-        return self.name
+        """Součástí textové reprezentace filmu bude jeho název, rok uvedení a hodnocení"""
+        return f"{self.name}, year: {str(self.poster)}, rate: {str(self.type)}"
+
+    def get_absolute_url(self):
+        """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
+        return reverse('film-detail', args=[str(self.id)])
 
 
 
