@@ -8,7 +8,16 @@ from django.contrib.auth.models import User #Blog author or commenter
 
 
 
-class Animal(models.Model):
+def attachment_path(instance, filename):
+    return "animal/" + str(instance.film.id) + "/attachments/" + filename
+
+""" Metoda vrací cestu k uploadovanému plakátu. """
+
+def poster_path(instance, filename):
+    return "animal/" + str(instance.id) + "/img/" + filename
+
+
+class Type(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Type of animal", help_text='Enter a type of animal (e.g. Savec)')
 
     class Meta:
@@ -18,56 +27,55 @@ class Animal(models.Model):
         return self.name
 
 
-class Blog(models.Model):
-    """
-    Model representing a blog post.
-    """
-    name = models.CharField(max_length=200)
-    author = models.ForeignKey(Animal, on_delete=models.SET_NULL, null=True)
-      # Foreign Key used because Blog can only have one author/User, but bloggsers can have multiple blog posts.
-    description = models.TextField(max_length=2000, help_text="Enter you blog text here.")
-    post_date = models.DateField(default=date.today)
 
+
+
+
+
+class Animal(models.Model):
+    name = models.CharField(max_length=50, unique=True, verbose_name="Type of animal", help_text='Enter a type of animal (e.g. Savec)')
+    type = models.TextField(max_length=1000, help_text="Enter comment about blog here.")
     class Meta:
-        ordering = ["-post_date"]
-
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular blog instance.
-        """
-        return reverse('blog-detail', args=[str(self.id)])
+        ordering = ["name"]
 
     def __str__(self):
-        """
-        String for representing the Model object.
-        """
         return self.name
-        
-        
-class BlogComment(models.Model):
-    """
-    Model representing a comment against a blog post.
-    """
-    description = models.TextField(max_length=1000, help_text="Enter comment about blog here.")
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-      # Foreign Key used because BlogComment can only have one author/User, but users can have multiple comments
-    post_date = models.DateTimeField(auto_now_add=True)
-    blog= models.ForeignKey(Blog, on_delete=models.CASCADE)
-    
+
+
+
+class Attachment(models.Model):
+    # Fields
+    # Povinný titulek přílohy - text do délky 200 znaků
+    title = models.CharField(max_length=200, verbose_name="Title")
+    # Časový údaj o poslední aktualizaci přílohy - automaticky se ukládá aktuální čas
+    last_update = models.DateTimeField(auto_now=True)
+    # Pole pro upload souboru
+    # Parametr upload_to zajistí uložení souboru do složky specifikované v návratové hodnotě metody attachment_path
+    file = models.FileField(upload_to=attachment_path, null=True, verbose_name="File")
+
+    # Konstanta, v níž jsou ve formě n-tic (tuples) předdefinovány různé typy příloh
+    TYPE_OF_ATTACHMENT = (
+        ('audio', 'Audio'),
+        ('image', 'Image'),
+        ('text', 'Text'),
+        ('video', 'Video'),
+        ('other', 'Other'),
+    )
+
+    # Pole s definovanými předvolbami pro uložení typu přílohy
+    type = models.CharField(max_length=5, choices=TYPE_OF_ATTACHMENT, blank=True, default='image',
+                            help_text='Select allowed attachment type', verbose_name="Attachment type")
+    # Cizí klíč, který zajišťuje propojení přílohy s daným filmem (vztah N:1)
+    # Parametr on_delete slouží k zajištění tzv. referenční integrity - v případě odstranění filmu
+    # budou odstraněny i všechny jeho přílohy (models.CASCADE)
+    film = models.ForeignKey(Animal, on_delete=models.CASCADE)
+
+    # Metadata
     class Meta:
-        ordering = ["post_date"]
+        # Primární seřazeno podle poslední aktualizace souborů, sekundárně podle typu přílohy
+        ordering = ["-last_update", "type"]
 
+    # Methods
     def __str__(self):
-        """
-        String for representing the Model object.
-        """
-        len_title=75
-        if len(self.description)>len_title:
-            titlestring=self.description[:len_title] + '...'
-        else:
-            titlestring=self.description
-        return titlestring
-
-
-
-
+        """ Textová reprezentace objektu """
+        return f"{self.title}, ({self.type})"

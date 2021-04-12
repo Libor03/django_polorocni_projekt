@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 from django.views import generic
-from .models import Blog, Animal, BlogComment
+from .models import Type, Animal, Attachment
 from django.contrib.auth.models import User #Blog author or commenter
 
 
@@ -24,7 +24,7 @@ class BlogListView(generic.ListView):
     """
     Generic class-based view for a list of all blogs.
     """
-    model = Blog
+    model = Type
     paginate_by = 5
 
     
@@ -34,7 +34,7 @@ class BlogListbyAuthorView(generic.ListView):
     """
     Generic class-based view for a list of blogs posted by a particular BlogAuthor.
     """
-    model = Blog
+    model = Type
     paginate_by = 5
     template_name ='blog/blog_list_by_author.html'
     
@@ -44,7 +44,7 @@ class BlogListbyAuthorView(generic.ListView):
         """
         id = self.kwargs['pk']
         target_author=get_object_or_404(Animal, pk = id)
-        return Blog.objects.filter(author=target_author)
+        return Type.objects.filter(author=target_author)
         
     def get_context_data(self, **kwargs):
         """
@@ -62,7 +62,7 @@ class BlogDetailView(generic.DetailView):
     """
     Generic class-based detail view for a blog.
     """
-    model = Blog
+    model = Type
 
     
 class BloggerListView(generic.ListView):
@@ -82,7 +82,7 @@ class BlogCommentCreate(LoginRequiredMixin, CreateView):
     """
     Form for adding a blog comment. Requires login. 
     """
-    model = BlogComment
+    model = Attachment
     fields = ['description',]
 
     def get_context_data(self, **kwargs):
@@ -92,7 +92,7 @@ class BlogCommentCreate(LoginRequiredMixin, CreateView):
         # Call the base implementation first to get a context
         context = super(BlogCommentCreate, self).get_context_data(**kwargs)
         # Get the blog from id and add it to the context
-        context['blog'] = get_object_or_404(Blog, pk = self.kwargs['pk'])
+        context['blog'] = get_object_or_404(Type, pk = self.kwargs['pk'])
         return context
         
     def form_valid(self, form):
@@ -102,7 +102,7 @@ class BlogCommentCreate(LoginRequiredMixin, CreateView):
         #Add logged-in user as author of comment
         form.instance.author = self.request.user
         #Associate comment with blog based on passed id
-        form.instance.blog=get_object_or_404(Blog, pk = self.kwargs['pk'])
+        form.instance.blog=get_object_or_404(Type, pk = self.kwargs['pk'])
         # Call super-class form validation behaviour
         return super(BlogCommentCreate, self).form_valid(form)
 

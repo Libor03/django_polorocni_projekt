@@ -2,22 +2,21 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Animal, Blog, BlogComment
+from .models import Animal, Type, Attachment
 
 
 # Minimal registration of Models.
 admin.site.register(Animal)
-admin.site.register(BlogComment)
-
+admin.site.register(Attachment)
+admin.site.register(Type)
 
 class BlogCommentsInline(admin.TabularInline):
     """
     Used to show 'existing' blog comments inline below associated blogs
     """
-    model = BlogComment
+    model = Attachment
     max_num=0
 
-@admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     """
     Administration object for Blog models.
