@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6298ca0d-e3f7-4538-8ab6-feea1b6d8bec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/base_generic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/awfa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/bear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/ewwwww.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/kocka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/krokodil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/muhahaha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animal/2021/04/12/pes.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +26,15 @@
   </component>
   <component name="ProjectId" id="1r4gWkluzBZUgNWcKnJRhZXFFMD" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fff" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\skuul\luc\dddjjjango\blog" />
+      <recent name="D:\skuul\luc\dddjjjango\blog\static\images" />
+      <recent name="D:\skuul\luc\dddjjjango\staticfiles" />
+      <recent name="D:\skuul\luc\dddjjjango\staticfiles\images" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -91,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618245128233</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="admin hotovo, zbyva index">
+      <created>1618245875976</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618245875976</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trocha uprav" />
     <MESSAGE value="trocha upravy" />
-    <option name="LAST_COMMIT_MESSAGE" value="trocha upravy" />
+    <MESSAGE value="admin hotovo, zbyva index" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin hotovo, zbyva index" />
   </component>
 </project>

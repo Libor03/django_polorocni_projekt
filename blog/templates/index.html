@@ -1,17 +1,36 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>DIY Blog Home</h1>
+<div class="row mt-3 mb-3 bg-warning p-3">
+    <div class="col-sm-12">
+        <h2 class="text-center">Nejlépe hodnocené filmy</h2>
+    </div>
+</div>
+<div class="row">
 
-<p>Welcome to <em>DIY Blog</em>, a very basic Django blogging website developed as an <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/django_assessment_blog">assessment task</a> for the Django learning module on the Mozilla Developer Network.</p>
+    {% for animal in animals %}
+
+    <div class="col-sm-4">
+        <div class="card">
+            {% if animal.poster %}
+            <img class="card-img-top" src="{{ animal.poster.url }}" alt="{{ animal.name }}">
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title">{{ animal.name }}</h4>
+                <p class="card-text"><strong>Žánry:</strong>
 
 
 
-<h2>UML Models</h2>
-<p>An UML diagram of the site's Django model structure is shown below. </p>
-
-<div>
-{% load static %}
-<img src="{% static "images/diy_django_mini_blog_models.png" %}" alt="My image" style="width:555px;height:540px;"/>
+                </p>
+                <a href="#" class="btn btn-primary">Podrobnosti</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <strong>Celkový počet roztomilých zvířátek:</strong> {{ num_animals }}
+    </div>
 </div>
 {% endblock %}

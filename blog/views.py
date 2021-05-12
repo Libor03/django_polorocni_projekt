@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from django.views import generic
 from .models import Type, Animal, Attachment
-from django.contrib.auth.models import User #Blog author or commenter
+from django.contrib.auth.models import User  # Blog author or commenter
 
 
 def index(request):
@@ -26,8 +26,8 @@ def index(request):
     return render(
         request,
         'index.html',
+        context=context
     )
-    
 
 
 class BlogListView(generic.ListView):
@@ -37,8 +37,9 @@ class BlogListView(generic.ListView):
     model = Type
     paginate_by = 5
 
-    
+
 from django.shortcuts import get_object_or_404
+
 
 class BlogListbyAuthorView(generic.ListView):
     """
@@ -46,16 +47,16 @@ class BlogListbyAuthorView(generic.ListView):
     """
     model = Type
     paginate_by = 5
-    template_name ='blog/blog_list_by_author.html'
-    
+    template_name = 'blog/blog_list_by_author.html'
+
     def get_queryset(self):
         """
         Return list of Blog objects created by BlogAuthor (author id specified in URL)
         """
         id = self.kwargs['pk']
-        target_author=get_object_or_404(Animal, pk = id)
+        target_author = get_object_or_404(Animal, pk=id)
         return Type.objects.filter(author=target_author)
-        
+
     def get_context_data(self, **kwargs):
         """
         Add BlogAuthor to context so they can be displayed in the template
@@ -63,10 +64,9 @@ class BlogListbyAuthorView(generic.ListView):
         # Call the base implementation first to get a context
         context = super(BlogListbyAuthorView, self).get_context_data(**kwargs)
         # Get the blogger object from the "pk" URL parameter and add it to the context
-        context['blogger'] = get_object_or_404(Animal, pk = self.kwargs['pk'])
+        context['blogger'] = get_object_or_404(Animal, pk=self.kwargs['pk'])
         return context
-    
-    
+
 
 class BlogDetailView(generic.DetailView):
     """
@@ -74,7 +74,7 @@ class BlogDetailView(generic.DetailView):
     """
     model = Type
 
-    
+
 class BloggerListView(generic.ListView):
     """
     Generic class-based view for a list of bloggers.
@@ -90,10 +90,10 @@ from django.urls import reverse
 
 class BlogCommentCreate(LoginRequiredMixin, CreateView):
     """
-    Form for adding a blog comment. Requires login. 
+    Form for adding a blog comment. Requires login.
     """
     model = Attachment
-    fields = ['description',]
+    fields = ['description', ]
 
     def get_context_data(self, **kwargs):
         """
@@ -102,22 +102,22 @@ class BlogCommentCreate(LoginRequiredMixin, CreateView):
         # Call the base implementation first to get a context
         context = super(BlogCommentCreate, self).get_context_data(**kwargs)
         # Get the blog from id and add it to the context
-        context['blog'] = get_object_or_404(Type, pk = self.kwargs['pk'])
+        context['blog'] = get_object_or_404(Type, pk=self.kwargs['pk'])
         return context
-        
+
     def form_valid(self, form):
         """
         Add author and associated blog to form data before setting it as valid (so it is saved to model)
         """
-        #Add logged-in user as author of comment
+        # Add logged-in user as author of comment
         form.instance.author = self.request.user
-        #Associate comment with blog based on passed id
-        form.instance.blog=get_object_or_404(Type, pk = self.kwargs['pk'])
+        # Associate comment with blog based on passed id
+        form.instance.blog = get_object_or_404(Type, pk=self.kwargs['pk'])
         # Call super-class form validation behaviour
         return super(BlogCommentCreate, self).form_valid(form)
 
-    def get_success_url(self): 
+    def get_success_url(self):
         """
         After posting comment return to associated blog.
         """
-        return reverse('blog-detail', kwargs={'pk': self.kwargs['pk'],})
+        return reverse('blog-detail', kwargs={'pk': self.kwargs['pk'], })

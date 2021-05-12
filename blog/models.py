@@ -9,12 +9,12 @@ from django.contrib.auth.models import User #Blog author or commenter
 
 
 def attachment_path(instance, filename):
-    return "animal/" + str(instance.film.id) + "/attachments/" + filename
+    return "animal/" + str(instance.animal.id) + "/attachments/" + filename
 
 """ Metoda vrací cestu k uploadovanému plakátu. """
 
 def poster_path(instance, filename):
-    return "animal/" + str(instance.id) + "/img/" + filename
+    return "animals/" + str(instance.id)  + filename
 
 
 class Type(models.Model):
@@ -34,9 +34,7 @@ class Type(models.Model):
 
 class Animal(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Name of animal")
-
-
-    poster = models.ImageField(upload_to='media/animal/%Y/%m/%d/', blank=True, null=True, verbose_name="Poster")
+    poster = models.ImageField(upload_to=poster_path, blank=True, null=True, verbose_name="Poster")
     type = models.ManyToManyField(Type, help_text='Select a type for this animal')
 
     # Metadata
