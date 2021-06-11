@@ -1,3 +1,4 @@
+from django.core.files.storage import FileSystemStorage
 from django.db import models
 
 # Create your models here.
@@ -7,14 +8,13 @@ from django.urls import reverse #Used to generate URLs by reversing the URL patt
 from django.contrib.auth.models import User #Blog author or commenter
 
 
-
 def attachment_path(instance, filename):
-    return "animal/" + str(instance.animal.id) + "/attachments/" + filename
+    return "media/animal/" + str(instance.animal.id) + "/attachments/" + filename
 
 """ Metoda vrací cestu k uploadovanému plakátu. """
 
 def poster_path(instance, filename):
-    return "animals/" + str(instance.id)  + filename
+    return "animals/" + str(instance.name)  +"/foto/"+ filename
 
 
 class Type(models.Model):
@@ -44,11 +44,11 @@ class Animal(models.Model):
     # Methods
     def __str__(self):
         """Součástí textové reprezentace filmu bude jeho název, rok uvedení a hodnocení"""
-        return f"{self.name}, year: {str(self.poster)}, rate: {str(self.type)}"
+        return f"{self.name}, {str(self.poster)}, {str(self.type)}"
 
     def get_absolute_url(self):
         """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
-        return reverse('film-detail', args=[str(self.id)])
+        return reverse('blog-detail', args=[str(self.id)])
 
 
 
