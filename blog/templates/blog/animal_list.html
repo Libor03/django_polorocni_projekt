@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>All blogs</h1>
+
+    {% if animals %}
+    <ul>
+
+      {% for animal in animals %}
+      <li>
+        <a href="{% url 'animal-detail' animal.pk %}">{{ animal.name }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>Žádná roztomilost :(. Přidej sem nějaké kamarády</p>
+    {% endif %}       
+{% endblock %}
+

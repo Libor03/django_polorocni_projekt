@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row mt-3 mb-3 bg-warning p-3">
     <div class="col-sm-12">
-        <h2 class="text-center">Nejlépe hodnocené filmy</h2>
+        <h2 class="text-center">Nejlepší zvířátka</h2>
     </div>
 </div>
 <div class="row">
@@ -13,16 +13,12 @@
     <div class="col-sm-4">
         <div class="card">
             {% if animal.poster %}
-            <img class="card-img-top" src="{{ animal.poster.url }}" alt="{{ animal.name }}">
+            <img class="card-img-top" height="600" src="{{ animal.poster.url }}" alt="{{ animal.name }}">
             {% endif %}
             <div class="card-body">
                 <h4 class="card-title">{{ animal.name }}</h4>
-                <p class="card-text"><strong>Žánry:</strong>
-
-
-
-                </p>
-                <a href="{% url 'blog/blog-detail' %}" class="btn btn-primary">Podrobnosti</a>
+                <p class="card-text"><strong>Krátký popis: {{ animal.latin }}</strong></p>
+                <a href="{% url 'animal-detail' animal.pk %}" class="btn btn-primary">Podrobnosti</a>
             </div>
         </div>
     </div>
@@ -30,7 +26,8 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <strong>Celkový počet roztomilých zvířátek:</strong> {{ num_animals }}
+        <strong>Celkový počet roztomilých zvířátek:</strong> {{ num_animals }}<br>
+        <a href="animals/" style="margin-top: 30px" class="btn btn-primary">Všechna zvířátka</a>
     </div>
 </div>
 {% endblock %}

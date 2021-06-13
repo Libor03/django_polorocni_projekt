@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <title>{% block title %}Filmotéka{% endblock %}</title>
+    <title>{% block title %}Zvířátka{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- Add additional CSS in static file -->
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+       {% load static %}
+    {% block css %}
+
+    {% endblock %}
+
+
 </head>
 <body>
     <header class="jumbotron-fluid p-5 text-center bg-dark">
-        <h1 class="text-white text-uppercase display-3">Malá filmová databáze</h1>
+        <h1 class="text-white text-uppercase display-3">Databáze zvířecích druhů</h1>
     </header>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
       <!-- Brand -->
-      <a class="navbar-brand text-warning" href="#">MFD</a>
+
 
       <!-- Toggler/collapsibe Button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -29,19 +33,14 @@
           <li class="nav-item">
             <a class="nav-link active" href="{% url 'index' %}">Úvodní stránka</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Filmy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Žánry</a>
-          </li>
+
         </ul>
       </div>
     </nav>
 <div class="container-fluid">
     {% block content %}{% endblock %}
 </div>
-<footer class="container-fluid text-center">
+<footer class=" text-center">
     <hr>
     <p>&copy; 2021 - SŠPU Opava</p>
 </footer>

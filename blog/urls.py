@@ -10,10 +10,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('blogs/', views.BlogListView.as_view(), name='blogs'),
-    path('', RedirectView.as_view(url='animals/')),
-    path('animals/<int:pk>/', views.BlogDetailView.as_view(), name='blog-detail')
+    path('animals/', views.AnimalListView.as_view(), name='animal-list'),
+    path('animals/<int:pk>/', views.AnimalDetailView.as_view(), name='animal-detail')
 ]
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

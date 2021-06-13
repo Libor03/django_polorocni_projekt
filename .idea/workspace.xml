@@ -2,25 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6298ca0d-e3f7-4538-8ab6-feea1b6d8bec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/animals/1/foto/pes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/486465/foto/bear.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/aaaaaaaaaaa/foto/ewwwww.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/aasdasdaw/foto/kocka.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/aasdasdwaf/foto/bear.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/awfafasf/foto/krokodil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/awfasf/foto/kocka.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/awfawfawffawwfa/foto/kocka.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/sg/foto/kocka.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/test/foto/kocka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/animals/aaaaaaaaaaaaaaaaaaa/foto/ewwwww.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/animals/asfasf/foto/pes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/animals/pes/foto/pes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/animals/test/foto/ewwwww.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/animals/test/foto/ewwwww_n7KJUjf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dddjjjango.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dddjjjango.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals/None/DSC_0703.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals/None/DSC_0703_RfR5eCC.JPG" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/animal_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/animal_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_diy_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_diy_blog/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_diy_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_diy_blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/1/foto/pes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/aaa/foto/pes.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/486465/foto/bear.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/awfasfa/foto/bear.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/aaaaaaaaaaa/foto/ewwwww.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/Tlustohlavec tasmánský/foto/ewwwww.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/aasdasdaw/foto/kocka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/a/foto/kocka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/aasdasdwaf/foto/bear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/awfafasf/foto/krokodil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/Krokodýl/foto/krokodil.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/awfasf/foto/kocka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/a/foto/kocka_40uhNOg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/awfawfawffawwfa/foto/kocka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/aaaa/foto/kocka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/animals/sg/foto/kocka.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +43,17 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../it3-django-movies-main" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../dddjjjango" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -85,6 +101,7 @@
   <component name="ServiceViewManager">
     <option name="showServicesTree" value="false" />
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

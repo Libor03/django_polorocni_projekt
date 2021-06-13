@@ -35,8 +35,8 @@ class Type(models.Model):
 class Animal(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Name of animal")
     poster = models.ImageField(upload_to=poster_path, blank=True, null=True, verbose_name="Poster")
-    type = models.ManyToManyField(Type, help_text='Select a type for this animal')
-
+    latin = models.CharField(max_length=50, unique=True, verbose_name="Latin name for animal")
+    description = models.CharField(max_length=5000, verbose_name="Description of animal")
     # Metadata
     class Meta:
         ordering = ["name"]
@@ -44,7 +44,7 @@ class Animal(models.Model):
     # Methods
     def __str__(self):
         """Součástí textové reprezentace filmu bude jeho název, rok uvedení a hodnocení"""
-        return f"{self.name}, {str(self.poster)}, {str(self.type)}"
+        return f"{self.name}, {str(self.poster)}, {str(self.latin)}"
 
     def get_absolute_url(self):
         """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
@@ -72,8 +72,8 @@ class Attachment(models.Model):
     )
 
     # Pole s definovanými předvolbami pro uložení typu přílohy
-    type = models.CharField(max_length=5, choices=TYPE_OF_ATTACHMENT, blank=True, default='image',
-                            help_text='Select allowed attachment type', verbose_name="Attachment type")
+    #type = models.CharField(max_length=5, choices=TYPE_OF_ATTACHMENT, blank=True, default='image',
+    #                        help_text='Select allowed attachment type', verbose_name="Attachment type")
     # Cizí klíč, který zajišťuje propojení přílohy s daným filmem (vztah N:1)
     # Parametr on_delete slouží k zajištění tzv. referenční integrity - v případě odstranění filmu
     # budou odstraněny i všechny jeho přílohy (models.CASCADE)
@@ -82,9 +82,9 @@ class Attachment(models.Model):
     # Metadata
     class Meta:
         # Primární seřazeno podle poslední aktualizace souborů, sekundárně podle typu přílohy
-        ordering = ["-last_update", "type"]
+        ordering = ["-last_update"]
 
     # Methods
     def __str__(self):
         """ Textová reprezentace objektu """
-        return f"{self.title}, ({self.type})"
+        return f"{self.title})"

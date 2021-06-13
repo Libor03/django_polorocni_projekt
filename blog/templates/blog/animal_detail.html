@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Detail zvířátka</h1>
+
+<h2>{{ animal.name }}</h2>
+
+<div >
+        <div style="width: 30%; float: left;">
+           <img width="100%" src="{{ animal.poster.url }}" alt="{{ animal.name }}">
+        </div>
+        <div style="margin-left: 32%;">
+            <p>{{ animal.description }}</p>
+        </div>
+    </div>
+
+
+{% endblock %}
+
