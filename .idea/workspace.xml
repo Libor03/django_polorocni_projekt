@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6298ca0d-e3f7-4538-8ab6-feea1b6d8bec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/animals/aaaaaaaaaaaaaaaaaaa/foto/ewwwww.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/asfasf/foto/pes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/pes/foto/pes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/test/foto/ewwwww.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/animals/test/foto/ewwwww_n7KJUjf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dddjjjango.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dddjjjango.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/base_generic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/animal_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/animal_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_diy_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_diy_blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_diy_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_diy_blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/1/foto/pes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/aaa/foto/pes.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/486465/foto/bear.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/awfasfa/foto/bear.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/aaaaaaaaaaa/foto/ewwwww.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/Tlustohlavec tasmánský/foto/ewwwww.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/aasdasdaw/foto/kocka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/a/foto/kocka.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/aasdasdwaf/foto/bear.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/awfafasf/foto/krokodil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/Krokodýl/foto/krokodil.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/awfasf/foto/kocka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/a/foto/kocka_40uhNOg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/awfawfawffawwfa/foto/kocka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/animals/aaaa/foto/kocka.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/animals/sg/foto/kocka.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../dddjjjango" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -162,7 +136,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620844614639</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="everything works">
+      <created>1623595998774</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623595998774</updated>
+    </task>
+    <task id="LOCAL-00009" summary="everything works">
+      <created>1623596009020</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1623596009020</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +172,7 @@
     <MESSAGE value="trocha upravy" />
     <MESSAGE value="admin hotovo, zbyva index" />
     <MESSAGE value="noting works" />
-    <option name="LAST_COMMIT_MESSAGE" value="noting works" />
+    <MESSAGE value="everything works" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything works" />
   </component>
 </project>
